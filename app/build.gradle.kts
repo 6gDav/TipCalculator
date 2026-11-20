@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.torok.david.tipcalculator"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.torok.david.tipcalculator"
@@ -34,6 +32,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("androidx.core:core:1.17.0")
+        force("androidx.core:core-ktx:1.17.0")
     }
 }
 
